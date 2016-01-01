@@ -1,0 +1,13 @@
+sudo: true
+language: java
+jdk:
+- oraclejdk8
+before_script: "sudo ln -s ~/.m2/repository /repository"
+script: "./gradlew install"
+addons:
+  artifacts:
+    target_paths:
+    - 'maven'
+    paths:
+    - '/repository/'
+

@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+group = 'com.cloudcraftnetwork.pluginAPI'
+version = '0.1'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+    maven {
+        url "https://oss.sonatype.org/content/groups/public/"
+    }
+}
+
+dependencies {
+    compile 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+    compile 'com.amazonaws:aws-java-sdk:1.10.42'
+}

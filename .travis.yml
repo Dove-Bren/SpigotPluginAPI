@@ -3,7 +3,7 @@ language: java
 jdk:
 - oraclejdk8
 before_script: "sudo ln -s ~/.m2/repository /repository"
-script: "./gradlew install"
+script: "./gradlew clean install"
 addons:
   artifacts:
     target_paths:

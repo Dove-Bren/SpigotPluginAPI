@@ -23,7 +23,7 @@
  * THE SOFTWARE.
  */
 
-package com.cloudcraftnetwork.plugin;
+package com.cloudcraftnetwork.api.plugin.spigot;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
@@ -34,7 +34,7 @@ import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.util.StringInputStream;
-import com.cloudcraftnetwork.plugin.info.*;
+import com.cloudcraftnetwork.api.plugin.spigot.info.*;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bukkit.plugin.java.JavaPlugin;

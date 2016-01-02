@@ -23,62 +23,41 @@
  * THE SOFTWARE.
  */
 
-package com.cloudcraftnetwork.plugin.info;
+package com.cloudcraftnetwork.api.plugin.spigot.info;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.UUID;
 
-public class PetInfo extends CloudCraftNetworkInfo {
+public class ItemInfo extends CloudCraftNetworkInfo {
 
     /**
-     * The id of the pet.
+     * The id of the item.
      */
     private final UUID id;
 
     /**
-     * The type of animal the pet is
+     * The Minecraft material of the item.
      */
-    private final String type;
+    private String type;
 
-    /**
-     * The name of the pet
-     */
-    private String name;
-
-    /**
-     * The pet's birthday (time since epoch)
-     */
-    private long birthday;
-
-    /**
-     * The personality type of the pet
-     */
-    private String personality;
-
-    public PetInfo(UUID id, String type) {
+    public ItemInfo(UUID id) {
         this.id = id;
-        this.type = type;
     }
 
     @JsonCreator
-    public PetInfo(
-            @JsonProperty(value = "type") UUID id,
-            @JsonProperty(value = "type") String type,
-            @JsonProperty(value = "name") String name,
-            @JsonProperty(value = "birthday") long birthday,
-            @JsonProperty(value = "personality") String personality
+    public ItemInfo(
+            @JsonProperty(value = "id") UUID id,
+            @JsonProperty(value = "type") String type
     ) {
-        this(id, type);
-        this.name = name;
-        this.birthday = birthday;
-        this.personality = personality;
+        this(id);
+        this.type = type;
     }
 
     @Override
     public String createKey() {
-        return type + "/" + id;
+        return id.toString();
     }
 
     public UUID getId() {
@@ -89,27 +68,7 @@ public class PetInfo extends CloudCraftNetworkInfo {
         return type;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public long getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(long birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getPersonality() {
-        return personality;
-    }
-
-    public void setPersonality(String personality) {
-        this.personality = personality;
+    public void setType(String type) {
+        this.type = type;
     }
 }

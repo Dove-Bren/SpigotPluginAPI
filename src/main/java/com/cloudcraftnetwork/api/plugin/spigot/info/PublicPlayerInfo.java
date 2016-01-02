@@ -1,4 +1,4 @@
-package com.cloudcraftnetwork.plugin.info;
+package com.cloudcraftnetwork.api.plugin.spigot.info;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

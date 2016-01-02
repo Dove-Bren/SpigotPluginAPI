@@ -23,7 +23,7 @@
  * THE SOFTWARE.
  */
 
-package com.cloudcraftnetwork.plugin.info;
+package com.cloudcraftnetwork.api.plugin.spigot.info;
 
 public class CostumeInfo extends CloudCraftNetworkInfo {
 

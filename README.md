@@ -1,2 +1,3 @@
-# SpigotPluginAPI [![Build Status](https://travis-ci.org/cloudcraftnetwork/SpigotPluginAPI.svg)](https://travis-ci.org/CloudCraftNetwork/SpigotPluginAPI)
+# SpigotPluginAPI [![Build Status](https://api.travis-ci.org/CloudCraftNetwork/SpigotPluginAPI.svg)](https://travis-ci.org/CloudCraftNetwork/SpigotPluginAPI)
+
 

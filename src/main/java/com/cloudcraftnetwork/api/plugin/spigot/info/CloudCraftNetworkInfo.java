@@ -23,7 +23,7 @@
  * THE SOFTWARE.
  */
 
-package com.cloudcraftnetwork.plugin.info;
+package com.cloudcraftnetwork.api.plugin.spigot.info;
 
 public abstract class CloudCraftNetworkInfo {
 

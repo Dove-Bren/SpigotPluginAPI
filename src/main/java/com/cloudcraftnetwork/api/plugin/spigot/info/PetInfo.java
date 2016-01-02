@@ -23,41 +23,62 @@
  * THE SOFTWARE.
  */
 
-package com.cloudcraftnetwork.plugin.info;
+package com.cloudcraftnetwork.api.plugin.spigot.info;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.UUID;
 
-public class ItemInfo extends CloudCraftNetworkInfo {
+public class PetInfo extends CloudCraftNetworkInfo {
 
     /**
-     * The id of the item.
+     * The id of the pet.
      */
     private final UUID id;
 
     /**
-     * The Minecraft material of the item.
+     * The type of animal the pet is
      */
-    private String type;
+    private final String type;
 
-    public ItemInfo(UUID id) {
+    /**
+     * The name of the pet
+     */
+    private String name;
+
+    /**
+     * The pet's birthday (time since epoch)
+     */
+    private long birthday;
+
+    /**
+     * The personality type of the pet
+     */
+    private String personality;
+
+    public PetInfo(UUID id, String type) {
         this.id = id;
+        this.type = type;
     }
 
     @JsonCreator
-    public ItemInfo(
-            @JsonProperty(value = "id") UUID id,
-            @JsonProperty(value = "type") String type
+    public PetInfo(
+            @JsonProperty(value = "type") UUID id,
+            @JsonProperty(value = "type") String type,
+            @JsonProperty(value = "name") String name,
+            @JsonProperty(value = "birthday") long birthday,
+            @JsonProperty(value = "personality") String personality
     ) {
-        this(id);
-        this.type = type;
+        this(id, type);
+        this.name = name;
+        this.birthday = birthday;
+        this.personality = personality;
     }
 
     @Override
     public String createKey() {
-        return id.toString();
+        return type + "/" + id;
     }
 
     public UUID getId() {
@@ -68,7 +89,27 @@ public class ItemInfo extends CloudCraftNetworkInfo {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(long birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getPersonality() {
+        return personality;
+    }
+
+    public void setPersonality(String personality) {
+        this.personality = personality;
     }
 }

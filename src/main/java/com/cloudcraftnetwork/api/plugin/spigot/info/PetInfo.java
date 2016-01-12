@@ -64,7 +64,7 @@ public class PetInfo extends CloudCraftNetworkInfo {
 
     @JsonCreator
     public PetInfo(
-            @JsonProperty(value = "type") UUID id,
+            @JsonProperty(value = "id") UUID id,
             @JsonProperty(value = "type") String type,
             @JsonProperty(value = "name") String name,
             @JsonProperty(value = "birthday") long birthday,
